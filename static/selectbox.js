@@ -118,33 +118,56 @@ function onLoadFunc() {
     }
 
     console.log('start_big_city_Value:' +start_big_city_Value)
-    var price = document.getElementById("price");
-//    console.log(cost)
+
     console.log(start_big_city_Value)
     if (cost) {
-        price.innerHTML = cost;
-        alert(start_big_city_Value + " " + start_small_city_Value + "에서 " + dest_big_city_Value + " " + dest_small_city_Value + "까지 견적은 " + cost + "입니다");
-
+//        alert(start_big_city_Value + " " + start_small_city_Value + "에서 " + dest_big_city_Value + " " + dest_small_city_Value + "까지 예상비용은 " + cost + "입니다");
+          var txt = start_big_city_Value + " " + start_small_city_Value + "에서 " + dest_big_city_Value + " " + dest_small_city_Value + "까지 예상비용은 " + cost + "입니다"
+        Swal.fire({
+                    icon: 'success',
+                    title: txt,
+                    text: '',
+                });
     }
     else if (start_big_city_Value == "시/도"){
-        price.innerHTML = "출발지 시/도를 선택해주세요";
-        alert("출발지 시/도를 선택해주세요");
+//        alert("출발지 시/도를 선택해주세요");
+        Swal.fire({
+                    icon: 'warning',
+                    title: "출발지 시/도를 선택해주세요",
+                    text: '',
+                });
     }
     else if (start_small_city_Value == "시/군/구"){
-        price.innerHTML = "출발지 시/군/구를 선택해주세요";
-        alert("출발지 시/군/구를 선택해주세요");
+//        alert("출발지 시/군/구를 선택해주세요");
+        Swal.fire({
+                    icon: 'warning',
+                    title: "출발지 시/군/구를 선택해주세요",
+                    text: '',
+                });
     }
     else if (dest_big_city_Value == "시/도"){
-        price.innerHTML = "도착지 시/도를 선택해주세요";
-        alert("도착지 시/도를 선택해주세요");
+//        alert("도착지 시/도를 선택해주세요");
+        Swal.fire({
+                    icon: 'warning',
+                    title: "도착지 시/도를 선택해주세요",
+                    text: '',
+                });
     }
     else if (dest_small_city_Value == "시/군/구"){
-        price.innerHTML = "도착지 시/군/구를 선택해주세요";
-        alert("도착지 시/군/구를 선택해주세요");
+//        alert("도착지 시/군/구를 선택해주세요");
+        Swal.fire({
+                    icon: 'warning',
+                    title: "도착지 시/군/구를 선택해주세요",
+                    text: '',
+                });
     }
     else {
-        price.innerHTML = "가격 정보 없음";
-        alert("가격 정보 없음");
+//        alert("가격 정보 없음");
+        Swal.fire({
+                    icon: 'info',
+                    title: "가격 정보 없음",
+                    text: '',
+                });
     }
 
  }
